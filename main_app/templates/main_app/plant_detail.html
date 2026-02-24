@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/plants/plant-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="plant-container">
+    <div class="plant-img">
+        <img
+            src="{% static 'images/pot-plant-icon.svg' %}"
+            alt="A house plant"
+        />
+    </div>
+    <div class="plant-details">
+        <h1>{{ plant.name }}</h1>
+        <h2>Located at the {{ plant.location }}</h2>
+        <h3>Species: {{ plant.species }}</h3>
+        <p>{{ plant.description }}</p>
+        
+        <div class="plant-actions">
+            <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

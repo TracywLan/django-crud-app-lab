@@ -1,10 +1,8 @@
-
-
 .page-header h1 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #2e7d32;
+    color: var(--primary-green);
 }
 
 .card-container {
@@ -21,7 +19,7 @@
 .card {
     background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 4px 12px #0000001a;
+    box-shadow: var(--card-box-shadow);
     overflow: hidden;
     width: 300px;
     position: relative;
@@ -31,7 +29,15 @@
 
 .card:hover {
     top: -5px;
-    box-shadow: 0 8px 16px #00000033;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow on hover */
+}
+
+/* Fixes the anchor tag to inherit text styles and fill the card */
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+    height: 100%; 
 }
 
 .card-content {
@@ -54,13 +60,13 @@
 }
 
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: #333333;
     margin-bottom: 0.5rem;
 }
 
 .card-content p {
-    color: #666666;
+    color: var(--text-muted);
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
 }

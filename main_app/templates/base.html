@@ -21,10 +21,10 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/plants">All Plants</a></li>
-                    <li><a href="/add-plant">Add a Plant</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'plant-index' %}">All Plants</a></li>
+                    <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
                 </ul>
             </nav>
         </header>

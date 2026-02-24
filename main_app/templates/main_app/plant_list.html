@@ -12,17 +12,20 @@
 <section class="card-container">
   {% for plant in plants %}
   <div class="card">
-    <div class="card-content">
-      <div class="card-img-container">
-        <img
-          src="{% static 'images/live_snake_plant.webp' %}"
-          alt="A house plant"
-        />
-      </div>
+    <a href="{% url 'plant-detail' plant.id %}">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img
+            src="{% static 'images/pot-plant-icon.svg' %}"
+            alt="A house plant"
+          />
+        </div>
       <h2 class="card-title">{{ plant.name }}</h2>
       <p>Located at the {{ plant.location }}</p>
       <p><small>{{ plant.description }}</small></p>
     </div>
+    </a>
+    
   </div>
   {% endfor %}
 </section>
