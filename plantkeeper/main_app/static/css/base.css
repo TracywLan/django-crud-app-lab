@@ -1,0 +1,354 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+:root {
+  font-size: 62.5%;
+  
+  /* Colors */
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-bg-ff: rgba(255, 255, 255, 0.95);
+  --primary-green: #5B705B;
+  --accent-green: #8DA08D;
+  --bg-sand: #F9F9F7;
+  --text-color: #222222;
+  --text-muted: #666666;
+  --link-hover-color: #5B705B;
+  
+  /* Missing Button & Alert Colors Added */
+  --button-bg: #5B705B;
+  --button-bg-hover: #4a5c4a;
+  --submit: #2e7d32;
+  --secondary: #8DA08D;
+  --warn: #f57c00;
+  --danger: #d32f2f;
+  
+  /* UI Elements */
+  --borders: 1px solid rgba(0, 0, 0, 0.1);
+  --card-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  /* Typography */
+  --font-xtreme: 6.4rem;
+  --font-xxl: 4.8rem;
+  --font-xl: 3.2rem;
+  --font-l: 2.0rem;
+  --font-reg: 1.6rem;
+}
+
+/* =========================================
+   GENERAL RESETS
+   ========================================= */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-sand);
+  color: var(--text-color);
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif; 
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h2 {
+  font-size: var(--font-xl);
+}
+
+/* =========================================
+   LAYOUT & HEADER
+   ========================================= */
+main {
+  width: 100%;
+  max-width: 1440px;
+  padding: 40px 5%;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--bg-sand);
+  width: 100%;
+}
+
+.header-logo-container {
+  font-family: 'Playfair Display', serif; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-green);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  background-color: var(--bg-sand);
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: var(--font-reg);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: var(--accent-green);
+  color: var(--bg-sand);
+}
+
+/* =========================================
+   COMPONENTS: HERO SECTION
+   ========================================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-accent-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+  position: relative;
+  min-height: 70vh;
+}
+
+.hero-content {
+  flex: 1;
+  font-size: var(--font-l);
+}
+
+.hero-content p {
+  color: var(--primary-green);
+}
+
+.hero-image-container {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-plant-bg {
+  width: 100%;
+}
+
+.main-plant-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* =========================================
+   COMPONENTS: PAGE HEADERS
+   ========================================= */
+.page-header {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.page-header h1 {
+  font-size: var(--font-xxl);
+  margin: 0;
+}
+
+.page-header img {
+  height: 40px;
+  margin-left: 15px;
+}
+
+.page-header img:first-of-type {
+  margin-left: 20px;
+}
+
+.about-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  margin-top: 3rem;
+}
+
+.page-content {
+  font-size: var(--font-reg);
+}
+
+
+/* =========================================
+  COMPONENTS: BUTTONS
+   ========================================= */
+.btn {
+  font-size: var(--font-reg);
+  padding: 12px 24px; 
+  border-radius: 8px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  background-color: var(--button-bg);
+  color: #fff;  
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-right: 10px;
+  display: inline-block; 
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--button-bg-hover);
+  transform: translateY(-1px);
+}
+
+.submit {
+  color: var(--submit);
+  border-color: var(--submit);
+  background-color: transparent;
+}
+
+.submit:hover {
+  background-color: var(--submit);
+  color: white;
+}
+
+.secondary {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  background-color: transparent;
+}
+
+.warn {
+  color: var(--warn);
+  border-color: var(--warn);
+  background-color: transparent;
+}
+
+.danger {
+  color: var(--danger);
+  border-color: var(--danger);
+  background-color: transparent;
+}
+
+/* =========================================
+   MEDIA QUERIES
+   ========================================= */
+@media only screen and (min-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  main {
+    max-width: 1300px;
+    min-height: calc(100vh - 53px);
+  }
+
+  nav,
+  .header-logo-container {
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+
+  .header-logo-container {
+    padding-top: 3px;
+    width: 213px;
+  }
+
+  nav {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-header h1 {
+    font-size: var(--font-xtreme);
+  }
+
+  .page-header img {
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  .page-header img:first-of-type {
+    margin-left: 25px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    header {
+      background: var(--nav-bg);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    min-height: calc(100vh - 55px);
+  }
+
+  header {
+    margin: 20px 20px 0 20px;
+    width: calc(100vw - 40px);
+    max-width: 1920px;
+    background-color: transparent;
+  }
+
+  nav,
+  .header-logo-container {
+    margin: 0;
+    background: var(--bg-sand);
+    border-radius: 18px;
+  }
+
+  .header-logo-container {
+    padding-top: 6px;
+    width: 256px;
+    height: auto;
+    padding-bottom: 6px;

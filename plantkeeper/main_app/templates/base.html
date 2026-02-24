@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plant Keeper</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        {% block head %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/plant-pot.png' %}"/>
+        {% endblock %}
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="header-logo-container">
+                <a href="/" class="logo-link">
+                    <img src="{% static 'images/plant-pot.png' %}" alt="The Plant Keeper Logo" class="logo-img" />
+                    <span class="logo-text">Plantkeeper</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/plants">All Plants</a></li>
+                    <li><a href="/add-plant">Add a Plant</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+        {% block content %} 
+        {% endblock %}
+        </main>
+    </body>
+</html>
