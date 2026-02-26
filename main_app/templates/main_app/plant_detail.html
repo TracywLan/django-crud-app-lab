@@ -22,7 +22,7 @@
             <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
         </div>
     </div>
-    <h3>Add a Watering</h3>
+   
     <form 
     action="{% url 'add-watering' plant.id %}" 
     method="POST"
@@ -60,7 +60,13 @@
         <h3>Applied Fertilizers</h3>
         <ul>
             {% for fertilizer in plant.fertilizers.all %}
-                <li>{{ fertilizer.name }} by {{ fertilizer.brand }}</li>
+                <li>
+                    {{ fertilizer.name }} by {{ fertilizer.brand }}
+                    <form action="{% url 'unassoc-fertilizer' plant.id fertilizer.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn submit">Remove</button>
+                    </form>
+                </li>
             {% empty %}
                 <li>No fertilizers applied yet.</li>
             {% endfor %}

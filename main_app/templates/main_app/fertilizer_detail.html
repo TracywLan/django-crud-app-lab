@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel='stylesheet' hred="{% static 'css/fertilizers/fertilizer-detail.css' %}" />
+{% endblock head %}
+
+{% block content %}
+<div class='card'>
+    <div class='card-content'>
+        <h2>{{fertilizer.name}}</h2>
+        <p>{{fertilizer.brand}}</P>
+    </div>
+</div>
+<a href="{% url "fertilizer-update" fertilizer.id %}" class="btn warn">Edit</a>
+<a href="{% url "fertilizer-delete" fertilizer.id %}" class="btn danger">Delete</a>
+
+{% endblock content %}
+
+

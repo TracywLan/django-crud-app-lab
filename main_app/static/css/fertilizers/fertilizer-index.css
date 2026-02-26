@@ -13,7 +13,8 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .card {
@@ -22,6 +23,7 @@
     box-shadow: var(--card-box-shadow);
     overflow: hidden;
     width: 300px;
+    height:120px;
     position: relative;
     top: 0;
     transition: top 0.3s ease, box-shadow 0.3s ease;
@@ -68,4 +70,30 @@
     color: var(--text-muted);
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-new{
+    background-color: var(--primary-green);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease
+}
+
+.add-new a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+}
+
+.add-new:hover{
+    cursor: pointer;
+    background-color: var(--accent-green);
+    color: var(--bg-sand);
 }

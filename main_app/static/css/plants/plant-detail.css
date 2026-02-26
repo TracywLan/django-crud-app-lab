@@ -1,0 +1,90 @@
+.plant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--bg-sand);
+}
+
+.plant-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.plant-details h1 {
+    font-size: var(--font-xxl);
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.plant-details h2 {
+    font-size: var(--font-xl);
+    color: var(--text-muted);
+}
+
+.plant-details h3 {
+    font-size: var(--font-l);
+    color: var(--primary-green);
+}
+
+.plant-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+
+.watering-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.watering-table th, 
+.watering-table td {
+    /* border: var(--borders); */
+    padding: 12px;
+    text-align: left;
+}
+
+.watering-table th {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+.subsection-content, 
+.watering-history, 
+.fertilizer-section {
+    grid-column: span 2;
+    margin-top: 2rem;
+    border-top: var(--borders);
+    padding-top: 1rem;
+}
+
+.fertilizer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fertilizer-section li {
+    padding: 8px 0;
+    border-bottom: var(--borders);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

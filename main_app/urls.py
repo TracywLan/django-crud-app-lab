@@ -18,6 +18,7 @@ urlpatterns = [
     path('fertilizers/<int:pk>/update/', views.FertilizerUpdate.as_view(), name='fertilizer-update'),
     path('fertilizers/<int:pk>/delete/', views.FertilizerDelete.as_view(), name='fertilizer-delete'),
     path('plants/<int:pk>/assoc_fertilizer/<int:fertilizer_pk>/', views.assoc_fertilizer, name='assoc-fertilizer'),
+    path('plants/<int:pk>/remove_fertilizer/<int:fertilizer_pk>/', views.unassoc_fertilizer, name='unassoc-fertilizer'),
     ]
 
 

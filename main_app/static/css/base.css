@@ -17,10 +17,10 @@
   /* Missing Button & Alert Colors Added */
   --button-bg: #5B705B;
   --button-bg-hover: #4a5c4a;
-  --submit: #2e7d32;
-  --secondary: #8DA08D;
-  --warn: #f57c00;
-  --danger: #d32f2f;
+  --submit: #4d754f;
+  --secondary: #577a57;
+  --warn: #cf9862c4;
+  --danger: #d14d4db2;
   
   /* UI Elements */
   --borders: 1px solid rgba(0, 0, 0, 0.1);
@@ -268,10 +268,20 @@ main {
   background-color: transparent;
 }
 
+.warn:hover{
+  background-color: var(--warn);
+  color: white;
+}
+
 .danger {
   color: var(--danger);
   border-color: var(--danger);
   background-color: transparent;
+}
+
+.danger:hover{
+  background-color: var(--danger);
+  color: white;
 }
 
 /* =========================================

@@ -34,7 +34,6 @@ class PlantCreate(CreateView):
 #Detail
 class PlantDetail(DetailView):
     model = Plant
-    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["watering_form"] = WateringForm()
@@ -63,14 +62,9 @@ def add_watering(request, pk):
         new_watering.save()
     return redirect('plant-detail', pk=pk)
 
-def assoc_fertilizer(request, pk, fertilizer_pk):
-    Plant.objects.get(id=pk).fertilizers.add(fertilizer_pk)
-    return redirect('plant-detail', pk=pk)
-
 
 class FertilizerList(ListView):
     model = Fertilizer
-    template_name = 'fertilizer/index.html'
     context_object_name = 'fertilizers'
 class FertilizerCreate(CreateView):
     model = Fertilizer
@@ -79,7 +73,6 @@ class FertilizerCreate(CreateView):
 
 class FertilizerDetail(DetailView):
     model = Fertilizer
-
 class FertilizerDelete(DeleteView):
     model = Fertilizer
     success_url = '/fertilizers/'
@@ -87,3 +80,10 @@ class FertilizerUpdate(UpdateView):
     model = Fertilizer
     fields = ['name', 'brand']
     
+def assoc_fertilizer(request, pk, fertilizer_pk):
+    Plant.objects.get(id=pk).fertilizers.add(fertilizer_pk)
+    return redirect('plant-detail', pk=pk)
+
+def unassoc_fertilizer(request, pk, fertilizer_pk):
+    Plant.objects.get(id=pk).fertilizers.remove(fertilizer_pk)
+    return redirect('plant-detail', pk=pk)
