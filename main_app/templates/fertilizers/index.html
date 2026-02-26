@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page-header">
+    <h1>All Fertilizers</h1>
+</section>
+
+<section class="card-container">
+    {% for fertilizer in fertilizers %}
+    <div class="card">
+        <div class="card-content">
+            <h2 class="card-title">{{ fertilizer.name }}</h2>
+            <p>Brand: {{ fertilizer.brand }}</p>
+        </div>
+    </div>
+    {% empty %}
+    <p>No fertilizers have been added to the database yet.</p>
+    {% endfor %}
+</section>
+{% endblock %}

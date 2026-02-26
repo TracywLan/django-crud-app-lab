@@ -2,7 +2,7 @@
    VARIABLES
    ========================================= */
 :root {
-  font-size: 62.5%;
+  font-size: 80%;
   
   /* Colors */
   --nav-bg: rgba(255, 255, 255, 0.8);
@@ -108,8 +108,8 @@ main {
 }
 
 .logo-text {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: var(--font-reg);
+  font-weight: 800;
   color: var(--primary-green);
 }
 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-header">
+    <h1>Add a New Fertilizer</h1>
+</section>
+
+<section class="form-container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn submit">Save Fertilizer</button>
+    </form>
+</section>
+{% endblock %}
