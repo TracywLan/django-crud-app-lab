@@ -1,10 +1,7 @@
-/* =========================================
-   VARIABLES
-   ========================================= */
 :root {
   font-size: 80%;
   
-  /* Colors */
+
   --nav-bg: rgba(255, 255, 255, 0.8);
   --nav-bg-ff: rgba(255, 255, 255, 0.95);
   --primary-green: #5B705B;
@@ -14,19 +11,19 @@
   --text-muted: #666666;
   --link-hover-color: #5B705B;
   
-  /* Missing Button & Alert Colors Added */
+
   --button-bg: #5B705B;
   --button-bg-hover: #4a5c4a;
-  --submit: #4d754f;
+  --submit: #5B705B;
   --secondary: #577a57;
   --warn: #cf9862c4;
   --danger: #d14d4db2;
   
-  /* UI Elements */
+
   --borders: 1px solid rgba(0, 0, 0, 0.1);
   --card-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
-  /* Typography */
+
   --font-xtreme: 6.4rem;
   --font-xxl: 4.8rem;
   --font-xl: 3.2rem;
@@ -34,9 +31,7 @@
   --font-reg: 1.6rem;
 }
 
-/* =========================================
-   GENERAL RESETS
-   ========================================= */
+
 html {
   box-sizing: border-box;
 }
@@ -62,16 +57,12 @@ ul {
   list-style: none;
 }
 
-/* =========================================
-   TYPOGRAPHY
-   ========================================= */
+
 h2 {
   font-size: var(--font-xl);
 }
 
-/* =========================================
-   LAYOUT & HEADER
-   ========================================= */
+
 main {
   width: 100%;
   max-width: 1440px;
@@ -88,7 +79,6 @@ main {
 }
 
 .header-logo-container {
-  font-family: 'Playfair Display', serif; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,8 +105,16 @@ main {
 
 .main-nav ul {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   background-color: var(--bg-sand);
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: flex;
+  align-items: center;
 }
 
 .main-nav a {
@@ -134,9 +132,27 @@ main {
   color: var(--bg-sand);
 }
 
-/* =========================================
-   COMPONENTS: HERO SECTION
-   ========================================= */
+#logout-form{
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.btn.secondary {
+  border: 1px solid var(--accent-green);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--accent-green);
+  transition: all 0.2s ease;
+}
+
+.btn.secondary:hover {
+  background-color: var(--accent-green);
+  color: white;
+}
+
+
 .hero {
   display: flex;
   align-items: center;
@@ -184,9 +200,7 @@ main {
   border-radius: 12px;
 }
 
-/* =========================================
-   COMPONENTS: PAGE HEADERS
-   ========================================= */
+
 .page-header {
   display: flex;
   align-items: center;
@@ -221,9 +235,7 @@ main {
 }
 
 
-/* =========================================
-  COMPONENTS: BUTTONS
-   ========================================= */
+
 .btn {
   font-size: var(--font-reg);
   padding: 12px 24px; 
@@ -284,9 +296,7 @@ main {
   color: white;
 }
 
-/* =========================================
-   MEDIA QUERIES
-   ========================================= */
+
 @media only screen and (min-width: 768px) {
   header {
     position: sticky;
@@ -361,4 +371,4 @@ main {
     padding-top: 6px;
     width: 256px;
     height: auto;
-    padding-bottom: 6px;
+    padding-bottom: 6px; }}

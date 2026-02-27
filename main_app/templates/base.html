@@ -21,12 +21,23 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'about' %}">About Us</a></li>
-                    <li><a href="{% url 'plant-index' %}">All Plants</a></li>
-                    <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
-                    <li><a href="{% url 'fertilizer-index' %}">All Fertilizers</a></li>
-                    {% comment %} <li><a href="{% url 'fertilizer-create' %}">Add a Fertilizer</a></li> {% endcomment %}
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'plant-index' %}">All Plants</a></li>
+                        <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
+                        <li><a href="{% url 'fertilizer-index' %}">All Fertilizers</a></li>
+                        <li>
+                            <form id='logout-form' method='post' action="{% url "logout" %}">
+                                {% csrf_token %}
+                                <button type="submit" class='btn secondary'>Log Out</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url "about" %}">About Us</a></li>
+                        <li><a href="{% url "login" %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>
